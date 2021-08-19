@@ -22,7 +22,7 @@ function myResult() {
 
     // we compare the input and result type value and give a function for every case.
     if(inputTypeValue === 'NIS' && resultTypeValue === 'NIS'){
-        converted.value = original.value;
+        converted.value = Number(original.value);
     }
     else if (inputTypeValue === 'NIS' && resultTypeValue === 'USD') {
         converted.value = (Number(original.value) / 3.24).toFixed(2);
@@ -34,7 +34,7 @@ function myResult() {
         converted.value = (Number(original.value) * 3.24).toFixed(2);
     }
     else if (inputTypeValue === 'USD' && resultTypeValue === 'USD') {
-        converted.value = original.value
+        converted.value = Number(original.value)
     }
     else if(inputTypeValue === 'USD' && resultTypeValue === 'EUR'){
         converted.value = (Number(original.value) / 1.17).toFixed(2);
@@ -46,7 +46,7 @@ function myResult() {
         converted.value = (Number(original.value) * 1.17).toFixed(2)
     }
     else if(inputTypeValue === 'EUR' && resultTypeValue === 'EUR'){
-        converted.value = original.value
+        converted.value = Number(original.value)
     }
 
 }
@@ -111,7 +111,6 @@ closeCalculator.forEach(button =>{
 function openCalc(){
     if(calculator == null)
     return
-    console.log(closeCalculator)
     calculator.classList.add('active')
     overlay.classList.add('active')
 }

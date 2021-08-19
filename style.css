@@ -332,7 +332,7 @@ h2 {
     .curencyConverter {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         transform-style: preserve-3d;
         width: 90%;
@@ -347,7 +347,6 @@ h2 {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(0);
-        transition: 200ms ease-in-out;
     }
     .curencyConverter.active {
         transform: translate(-50%, -50%) scale(1);
@@ -362,10 +361,14 @@ h2 {
     #input {
         height: 40px;
         width: 80%;
+        font-size: 20px;
+        font-weight: 400;
     }
     #output {
         height: 40px;
         width: 80%;
+        font-size: 20px;
+        font-weight: 400;
     }
     .menu {
         display: flex;
@@ -375,6 +378,7 @@ h2 {
         width: 100%;
         justify-content: space-around;
         align-content: space-between;
+        
     }
     .Close {
         margin: 0;
@@ -393,5 +397,7 @@ h2 {
     }
     .currency {
         width: 80%;
+        font-size: 20px;
+        font-weight: 400;
     }
 }
