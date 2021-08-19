@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
 }
 
-body{
+body {
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-body::before{
+body::before {
     content: "";
     position: absolute;
     top: 0;
@@ -22,7 +23,7 @@ body::before{
     clip-path: circle(22% at 30% 20%);
 }
 
-body::after{
+body::after {
     content: "";
     position: absolute;
     top: 0;
@@ -33,7 +34,7 @@ body::after{
     clip-path: circle(20% at 70% 90%);
 }
 
-.Close{
+.Close {
     background: none;
     border: none;
     width: 20px;
@@ -44,9 +45,7 @@ body::after{
     cursor: pointer;
 }
 
-
-
-section{
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,18 +54,16 @@ section{
     z-index: 0;
 }
 
-::placeholder{
+::placeholder {
     color: white;
     opacity: 75%;
 }
 
-
-.curencyConverter{
+.curencyConverter {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    position: relative;
     transform-style: preserve-3d;
     width: 500px;
     height: 200px;
@@ -83,11 +80,11 @@ section{
     transition: 200ms ease-in-out;
 }
 
-.curencyConverter.active{
+.curencyConverter.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.inputs{
+.inputs {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -96,7 +93,7 @@ section{
     height: 50px;
 }
 
-#input{
+#input {
     background: none;
     border-radius: 5PX;
     border: none;
@@ -108,7 +105,7 @@ section{
     outline: none;
 }
 
-#output{
+#output {
     background: none;
     border-radius: 5PX;
     border: none;
@@ -120,14 +117,14 @@ section{
     outline: none;
 }
 
-.menu{
+.menu {
     display: flex;
     width: 500px;
     justify-content: space-around;
     align-items: center;
 }
 
-.currency{
+.currency {
     width: 170px;
     height: 40px;
     text-align-last: center;
@@ -139,12 +136,11 @@ section{
     border: none;
     color: white;
     outline: none;
-
 }
 
-option{
- background: none;
- color: black;
+option {
+    background: none;
+    color: black;
 }
 
 .fa-exchange-alt:before {
@@ -152,7 +148,7 @@ option{
     color: white;
 }
 
-#overlay{
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -160,14 +156,13 @@ option{
     bottom: 0;
     pointer-events: none;
     transition: 200ms ease-in-out;
-
 }
 
-#overlay.active{
+#overlay.active {
     pointer-events: all;
 }
 
-.calculator{
+.calculator {
     position: absolute;
     background: rgba(225, 225, 225, 0.05);
     border-radius: 6px;
@@ -182,15 +177,13 @@ option{
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     z-index: 1;
-
 }
 
-.calculator.active{
+.calculator.active {
     transform: translate(-50%, -50%) scale(1);
-
 }
 
-.calculator .value{
+.calculator .value {
     grid-column: span 4;
     height: 140px;
     width: 300px;
@@ -205,7 +198,7 @@ option{
     border-right: 1px solid rgba(225, 225, 225, 0.05);
 }
 
-.calculator span{
+.calculator span {
     display: grid;
     width: 75px;
     height: 75px;
@@ -219,35 +212,34 @@ option{
     transition: 0.5s;
 }
 
-.calculator span:hover{
+.calculator span:hover {
     transition: 0s;
     background: rgba(225, 225, 225, 0.05);
-
 }
 
-.calculator span:active{
+.calculator span:active {
     background: #14ff47;
     color: #192f00;
     font-size: 24px;
     font-weight: 500;
 }
 
-.calculator .clear{
+.calculator .clear {
     grid-column: span 2;
     width: 150px;
     background: rgba(225, 225, 225, 0.05);
 }
 
-.calculator .plus{
+.calculator .plus {
     grid-row: span 2;
     height: 150px;
 }
 
-.equal{
+.equal {
     background: rgba(225, 225, 225, 0.05);
 }
 
-.closeCalc{
+.closeCalc {
     background: none;
     border: none;
     position: absolute;
@@ -261,7 +253,7 @@ option{
     z-index: 20;
 }
 
-.openModals{
+.openModals {
     position: absolute;
     display: flex;
     align-items: center;
@@ -271,7 +263,7 @@ option{
     right: 40px;
 }
 
-.openCalculator{
+.openCalculator {
     height: 70px;
     width: 170px;
     font-size: 20px;
@@ -283,17 +275,16 @@ option{
     cursor: pointer;
 }
 
-.openCalculator:hover{
+.openCalculator:hover {
     background: rgba(225, 225, 225, 0.2);
-
 }
 
-.openCalculator:active{
+.openCalculator:active {
     background: #14ff47;
     color: #192f00;
 }
 
-.openCurrencyConverter{
+.openCurrencyConverter {
     height: 70px;
     width: 170px;
     font-size: 15px;
@@ -305,20 +296,102 @@ option{
     cursor: pointer;
 }
 
-.openCurrencyConverter:hover{
+.openCurrencyConverter:hover {
     background: rgba(225, 225, 225, 0.2);
 }
 
-.openCurrencyConverter:active{
+.openCurrencyConverter:active {
     background: #14ff47;
     color: #192f00;
 }
 
-h1{
+h1 {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    font-size: 200px;
+    font-size: 15vw;
     color: white;
     z-index: 1;
+}
+
+h2 {
+    display: none;
+}
+
+@media screen and (max-width: 375px) {
+    .openModals {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .curencyConverter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform-style: preserve-3d;
+        width: 90%;
+        height: 70%;
+        perspective: 500px;
+        z-index: 1;
+        box-shadow: 0 15px 35px rgb(0 0 0 / 50%);
+        border-radius: 15px;
+        background: rgba(225, 225, 225, 0.05);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+    }
+    .curencyConverter.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 30%;
+        width: 100%;
+    }
+    #input {
+        height: 40px;
+        width: 80%;
+    }
+    #output {
+        height: 40px;
+        width: 80%;
+    }
+    .menu {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: 30%;
+        width: 100%;
+        justify-content: space-around;
+        align-content: space-between;
+    }
+    .Close {
+        margin: 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        color: white;
+        display: block;
+    }
+    .openModals {
+        position: absolute;
+        width: 100%;
+    }
+    .currency {
+        width: 80%;
+    }
 }

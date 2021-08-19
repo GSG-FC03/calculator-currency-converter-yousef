@@ -20,7 +20,7 @@ function myResult() {
   inputTypeValue = initialCurrency.value;
   resultTypeValue = finalCurrency.value;
 
-    // we compare the input and result type value.
+    // we compare the input and result type value and give a function for every case.
     if(inputTypeValue === 'NIS' && resultTypeValue === 'NIS'){
         converted.value = original.value;
     }
@@ -90,9 +90,10 @@ function closeConv() {
 }
 
 // making a funtction that opens and closes the calculator
-let openCalculator = document.querySelectorAll('[data-calc-target]')
-let closeCalculator = document.querySelectorAll('[data-closeCalc-button]')
-    
+let openCalculator = document.querySelectorAll('[data-calc-target]');
+let closeCalculator = document.querySelectorAll('[data-closeCalc-button]');
+let calcInputFeild = document.getElementById('calcInput');
+
 openCalculator.forEach(button =>{
     button.addEventListener('click', () =>{
         const calc = document.querySelector(button.dataset.calcTarget)
@@ -107,16 +108,18 @@ closeCalculator.forEach(button =>{
     })
 })
 
-function openCalc(calc){
+function openCalc(){
     if(calculator == null)
     return
+    console.log(closeCalculator)
     calculator.classList.add('active')
     overlay.classList.add('active')
 }
 
-function closeCalc(calc){
+function closeCalc(){
     if(calculator == null)
     return
+    calcInputFeild.value = null
     calculator.classList.remove('active')
     overlay.classList.remove('active')
 }

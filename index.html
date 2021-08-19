@@ -44,6 +44,8 @@
               <option value="EUR">EUR</option>
             </select>
 
+            <h2>To</h2>
+
             <select name="currencyTo" class="currency" id="outputCurrency">
               <option value="NIS">NIS</option>
               <option value="USD">USD</option>
@@ -56,8 +58,8 @@
         <!-- used form element -->
         <!-- added an onclick event so that on each button click the contents of that button will be added to the input feild of the calculator -->
         <form class="calculator" id="calculator" name="calc">
-          <button class="closeCalc" data-closeCalc-button>&times;</button>
-          <input type="text" class="value" name="txt" readonly />
+          <button class="closeCalc" type="button" data-closeCalc-button>&times;</button>
+          <input type="text" id="calcInput" class="value" name="txt" readonly />
           <span class="num clear" onclick="calc.txt.value= ''">C</span>
           <span class="num" onclick="document.calc.txt.value += '/'">/</span>
           <span class="num" onclick="document.calc.txt.value += '*'">*</span>
@@ -83,7 +85,7 @@
       <!-- added an overlay so that if the calculator or converter is open any elements behind it cannot be clicked -->
       <div id="overlay"></div>
 
-      
+
     </section>
     <script src="main.js"></script>
   </body>
