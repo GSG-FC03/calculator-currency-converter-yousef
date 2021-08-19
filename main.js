@@ -10,7 +10,7 @@ original.addEventListener("keyup", myResult);
 initialCurrency.addEventListener("change", myResult);
 finalCurrency.addEventListener("change", myResult);
 
-// to take initial values
+// to take initial values and final value of the currency types
 inputTypeValue = initialCurrency.value;
 resultTypeValue = finalCurrency.value;
 
@@ -51,6 +51,7 @@ function myResult() {
 
 }
 
+// making function that opens and closes the container of the currency converter
 let openCurencyConverter = document.querySelectorAll('[data-modal-target]')
 let closeCurencyConverter = document.querySelectorAll('[data-close-button]')
 let overlay = document.getElementById('overlay')
@@ -58,7 +59,7 @@ let overlay = document.getElementById('overlay')
 openCurencyConverter.forEach(button =>{
     button.addEventListener('click', () =>{
         const conv = document.querySelector(button.dataset.modalTarget)
-        openModal(conv)
+        openConv(conv)
     })
 })
 
@@ -68,12 +69,12 @@ closeCurencyConverter.forEach(button =>{
         const conv = button.closest('.curencyConverter')
         original.value = null
         converted.value = null
-        closeModal(conv)
+        closeConv(conv)
     })
 })
 
 
-function openModal() {
+function openConv() {
     if(currencyConverter == null)
     return
     currencyConverter.classList.add('active')
@@ -81,13 +82,14 @@ function openModal() {
 }
 
 
-function closeModal() {
+function closeConv() {
     if(currencyConverter == null)
     return
     currencyConverter.classList.remove('active')
     overlay.classList.remove('active')
 }
 
+// making a funtction that opens and closes the calculator
 let openCalculator = document.querySelectorAll('[data-calc-target]')
 let closeCalculator = document.querySelectorAll('[data-closeCalc-button]')
     
@@ -98,9 +100,23 @@ openCalculator.forEach(button =>{
     })
 })
 
+closeCalculator.forEach(button =>{
+    button.addEventListener('click', () =>{
+        const calc = button.closest('.calculator')
+        closeCalc(calc)
+    })
+})
+
 function openCalc(calc){
     if(calculator == null)
     return
     calculator.classList.add('active')
     overlay.classList.add('active')
+}
+
+function closeCalc(calc){
+    if(calculator == null)
+    return
+    calculator.classList.remove('active')
+    overlay.classList.remove('active')
 }

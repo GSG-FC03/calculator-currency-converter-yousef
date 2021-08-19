@@ -15,29 +15,26 @@
     <section>
       <h1>Welcome</h1>
       <div class="root" id="root">
+
+        <!-- two buttons to one to open the calculator and another to open the converter -->
         <div class="openModals">
           <button class="openCalculator" data-calc-target="#calculator">
             Calculator
           </button>
-          <button
-            class="openCurrencyConverter"
-            data-modal-target="#currencyConverter"
-          >
+
+
+          <button class="openCurrencyConverter" data-modal-target="#currencyConverter">
             Currency Converter
           </button>
         </div>
+
+        <!-- HTML code for the currency converter -->
         <div class="curencyConverter" id="currencyConverter">
           <button class="Close" data-close-button>&times;</button>
           <div class="inputs">
             <input type="text" placeholder="amount" id="input" />
-            <!-- <img src="currencyconvert.svg" class="convertImg" alt="" /> -->
             <i class="fas fa-exchange-alt"></i>
-            <input
-              type="text"
-              placeholder="final Amount"
-              id="output"
-              readonly
-            />
+            <input type="text" placeholder="final Amount" id="output" readonly/>
           </div>
 
           <div class="menu">
@@ -54,6 +51,10 @@
             </select>
           </div>
         </div>
+
+        <!-- HTML code for the calculator -->
+        <!-- used form element -->
+        <!-- added an onclick event so that on each button click the contents of that button will be added to the input feild of the calculator -->
         <form class="calculator" id="calculator" name="calc">
           <button class="closeCalc" data-closeCalc-button>&times;</button>
           <input type="text" class="value" name="txt" readonly />
@@ -67,23 +68,22 @@
           <span class="num" onclick="document.calc.txt.value += '4'">4</span>
           <span class="num" onclick="document.calc.txt.value += '5'">5</span>
           <span class="num" onclick="document.calc.txt.value += '6'">6</span>
-          <span class="num plus" onclick="document.calc.txt.value += '+'"
-            >+</span
-          >
+          <span class="num plus" onclick="document.calc.txt.value += '+'">+</span>
           <span class="num" onclick="document.calc.txt.value += '1'">1</span>
           <span class="num" onclick="document.calc.txt.value += '2'">2</span>
           <span class="num" onclick="document.calc.txt.value += '3'">3</span>
           <span class="num" onclick="document.calc.txt.value += '0'">0</span>
           <span class="num" onclick="document.calc.txt.value += '00'">00</span>
           <span class="num" onclick="document.calc.txt.value += '.'">.</span>
-          <span
-            class="num equal"
-            onclick="document.calc.txt.value = eval(calc.txt.value)"
-            >=</span
-          >
+          <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
         </form>
+
       </div>
+
+      <!-- added an overlay so that if the calculator or converter is open any elements behind it cannot be clicked -->
       <div id="overlay"></div>
+
+      
     </section>
     <script src="main.js"></script>
   </body>
