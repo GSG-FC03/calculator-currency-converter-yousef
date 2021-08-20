@@ -185,8 +185,9 @@ option {
 
 .calculator .value {
     grid-column: span 4;
-    height: 140px;
+    height: 70px;
     width: 300px;
+    line-height: 2;
     text-align: right;
     border: none;
     outline: none;
@@ -194,12 +195,30 @@ option {
     font-size: 30px;
     background: transparent;
     color: #FFF;
-    border-bottom: 1px solid rgba(225, 225, 225, 0.05);
+    /* border-bottom: 1px solid rgba(225, 225, 225, 0.05); */
     border-right: 1px solid rgba(225, 225, 225, 0.05);
 }
 
-.calculator span {
+.calculator .previousValue{
+    grid-column: span 4;
+    height: 70px;
+    width: 300px;
+    line-height: 5;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+    background: transparent;
+    color: #FFF;
+    /* border-bottom: 1px solid rgba(225, 225, 225, 0.05); */
+    border-right: 1px solid rgba(225, 225, 225, 0.05);
+}
+
+.calculator button {
     display: grid;
+    background: none;
+    border: none;
     width: 75px;
     height: 75px;
     color: #FFF;
@@ -212,12 +231,12 @@ option {
     transition: 0.5s;
 }
 
-.calculator span:hover {
+.calculator button:hover {
     transition: 0s;
     background: rgba(225, 225, 225, 0.05);
 }
 
-.calculator span:active {
+.calculator button:active {
     background: #14ff47;
     color: #192f00;
     font-size: 24px;
@@ -230,13 +249,18 @@ option {
     background: rgba(225, 225, 225, 0.05);
 }
 
-.calculator .plus {
-    grid-row: span 2;
-    height: 150px;
+.calculator .delete {
+    grid-column: span 1;
 }
 
-.equal {
+/* .calculator .plus {
+    grid-row: span 1;
+} */
+
+.calculator .equal {
     background: rgba(225, 225, 225, 0.05);
+    grid-column: span 2;
+    width: 150px;
 }
 
 .closeCalc {
@@ -317,6 +341,11 @@ h1 {
 h2 {
     display: none;
 }
+
+
+
+
+
 
 @media screen and (max-width: 375px) {
     .openModals {
