@@ -7,6 +7,7 @@
 
 ## ✧ Links
 - [Github Link](https://github.com/GSG-FC03/calculator-currency-converter-yousef)
+- [Live Link](https://gsg-fc03.github.io/calculator-currency-converter-yousef/)
 
 ## ✧ Problem
 - A client has required from us to create a solution where he can have an application that can perform basic calculations and convert specific types of currencies. 
